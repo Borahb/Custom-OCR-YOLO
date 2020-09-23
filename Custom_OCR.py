@@ -164,9 +164,7 @@ Y.to_csv (r'out_csv/cust_ocr.csv', index = False, header=['Test Name', 'Unit', '
 
 
 
-im = cv2.imread('Crop/crop__2.jpg')
 
-b = py.image_to_string(im)
 
 
 
