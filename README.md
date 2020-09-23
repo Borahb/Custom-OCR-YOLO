@@ -40,3 +40,8 @@ Currently it is still in R&D Phase.
 ### Step 3
 
 - 🔃 Create a new pull request 
+
+## License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+- **[MIT license](http://opensource.org/licenses/mit-license.php)**
