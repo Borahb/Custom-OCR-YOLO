@@ -14,4 +14,4 @@ Here I have used YOLO_V3 trained on personal dataset. Then the coordinates of th
 - Install OpenCV ` pip opencv `
 
 # Workflow
-
+<img src = "assets/workflow.png" height = 500>
