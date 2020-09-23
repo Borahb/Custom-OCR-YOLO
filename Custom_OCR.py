@@ -11,6 +11,12 @@ import json
 import pandas as pd
 
 
+ap = argparse.ArgumentParser()
+ap.add_argument('-i', '--image', required=True,
+                help = 'path to input image')
+args = ap.parse_args()
+
+
 #Using YOLO-V3 
 
 def get_output_layers(net):
@@ -34,7 +40,7 @@ def draw_prediction(img, class_id, confidence, x, y, x_plus_w, y_plus_h):
     
 
 #reading the image file
-image = cv2.imread('images/repo5.jpg')
+image = cv2.imread(args.image)
 
 Width = image.shape[1]
 Height = image.shape[0]
