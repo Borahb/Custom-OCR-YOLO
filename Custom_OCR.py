@@ -117,10 +117,11 @@ Data = dict(zip(K,B))
 
 
 #Creating a Dataframe
-Y = pd.DataFrame(Data)
+Y = pd.DataFrame(dict([ (k,pd.Series(v)) for k,v in Data.items() ]))
+
 
 #Exporting to CSV 
-Y.to_csv (r'out_csv/cust_ocr3.csv', index = False, header=['Test Name', 'Unit', 'Reference Value', 'Value'])
+Y.to_csv (r'out_csv/cust_ocr4.csv', index = False, header=['Test Name', 'Unit', 'Reference Value', 'Value'])
 
 
 '''
