@@ -1,6 +1,6 @@
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/Borahb/Custom-OCR-YOLO.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Borahb/Custom-OCR-YOLO/context:python)
 # Custom-OCR-YOLO
- <img src = "asset/logo.png" height = 300, width = 900>
+ <img src = "asset/logo.png" height = 200, width = 900>
  
  
 This is a Custom OCR built by combining YOLO and Tesseract, to read the specific contents of a Lab Report and convert it into an editable file.
