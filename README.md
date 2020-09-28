@@ -8,6 +8,10 @@ Here I have used YOLO_V3 trained on personal dataset. Then the coordinates of th
 - Download the weights file from this link : https://drive.google.com/file/d/1o6_3dcsMd9sUFblvyWyraeuMEifzE1YA/view?usp=sharing
 - Make a folder named model and put the weights file inside it.
 
+## Data
+- Link for the dataset https://drive.google.com/drive/folders/1uAc8xE6AS8YCb65iNMFyEfB5dzAWsgFN?usp=sharing
+
+
 ## Dependencies
 - Install Tesseract OCR Engine in the system ` https://github.com/UB-Mannheim/tesseract/wiki `
 - Install Pytesseract library ` pip install pytessercat `
