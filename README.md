@@ -9,7 +9,7 @@ Here I have used YOLO_V3 trained on personal dataset. Then the coordinates of th
 - Make a folder named model and put the weights file inside it.
 
 ## Dependencies
-- Install Tesseract OCR Engine in the system
+- Install Tesseract OCR Engine in the system ` https://github.com/UB-Mannheim/tesseract/wiki `
 - Install Pytesseract library ` pip install pytessercat `
 - Install OpenCV ` pip opencv `
 
@@ -23,7 +23,7 @@ Here I have used YOLO_V3 trained on personal dataset. Then the coordinates of th
 `python Custom_OCR.py --image <yourimage.jpg>`
 
 ## Contributing
-Currently it is still in R&D Phase.
+Currently it is in R&D Phase.
 
 ### Step 1
 
