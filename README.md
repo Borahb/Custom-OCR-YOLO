@@ -70,6 +70,12 @@ Then we apply a bitwise_not mask to flip the image to black text on white backgr
 <img src = "Crop/roi__0.jpg" height = 100, width = 200>
 </p>
 
+The  preprocessed images are then passed over Tesseract and the output is saved as a csv file.
+
+<p align="center"> 
+<img src = "asset/Screenshot (400).png" height = 100, width = 550>
+</p>
+
 ## Contributing
 Currently it is in R&D Phase.
 
