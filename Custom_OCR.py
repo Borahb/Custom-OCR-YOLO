@@ -39,7 +39,7 @@ with open('yolov3-classes.txt', 'r') as f:
 
 COLORS = np.random.uniform(0, 255, size=(len(classes), 3))
 
-net = cv2.dnn.readNet('model/yolov3.weights', 'cfg/yolov3-custom.cfg')
+net = cv2.dnn.readNet('model/yolov3_6000.weights', 'cfg/yolov3-custom.cfg')
 
 blob = cv2.dnn.blobFromImage(image, scale, (416,416), (0,0,0), True, crop=False)
 
@@ -90,7 +90,20 @@ for i in indices:
     h = box[3]
     crop_img = image[y:y+h, x:x+w]
     cv2.imwrite("Crop/crop__" + str(i) + ".jpg",crop_img)
-    c = py.image_to_string(crop_img)
+    # grayscale region within bounding box
+    gray = cv2.cvtColor(crop_img, cv2.COLOR_RGB2GRAY)
+    # resize image to three times as large as original for better readability
+    gray = cv2.resize(gray, None, fx = 3, fy = 3, interpolation = cv2.INTER_CUBIC)
+    # perform gaussian blur to smoothen image
+    blur = cv2.GaussianBlur(gray, (5,5), 0)
+    # threshold the image using Otsus method to preprocess for tesseract
+    ret, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_OTSU | cv2.THRESH_BINARY_INV)
+    #perfrom bitwise not to flip image to black text on white background
+    roi = cv2.bitwise_not(thresh)
+    #saving the roi regions
+    cv2.imwrite("Crop/roi__" + str(i) + ".jpg",roi)
+    #passing to tesseract
+    c = py.image_to_string(roi, config = '--oem 3')
     A.append(c)
 
 
@@ -103,9 +116,6 @@ for i in range(N):
     a = A[i].split('\n')
     B.append(a)
 
-
-
-S_3 = ['60-200', '4.5-12', '0.3-5.5']
 
 
 
@@ -121,16 +131,38 @@ Y = pd.DataFrame(dict([ (k,pd.Series(v)) for k,v in Data.items() ]))
 
 
 #Exporting to CSV 
-Y.to_csv (r'out_csv/cust_ocr4.csv', index = False, header=['Test Name', 'Unit', 'Reference Value', 'Value'])
+Y.to_csv (r'out_csv/cust_ocr5.csv', index = False, header=['Test Name', 'Unit', 'Reference Value', 'Value'])
 
 
+
+
+#------------------------for validating crop images---------------------
 '''
-im = cv2.imread('Crop/crop__3.jpg')
+img = cv2.imread('Crop/crop__1.jpg')
 
-b = py.image_to_string(im)
+b = py.image_to_string(img,config='--oem 3')
+
+# grayscale region within bounding box
+gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+    # resize image to three times as large as original for better readability
+gray = cv2.resize(gray, None, fx = 3, fy = 3, interpolation = cv2.INTER_CUBIC)
+    # perform gaussian blur to smoothen image
+blur = cv2.GaussianBlur(gray, (5,5), 0)
+    #cv2.imshow("Gray", gray)
+    #cv2.waitKey(0)
+    # threshold the image using Otsus method to preprocess for tesseract
+ret, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_OTSU | cv2.THRESH_BINARY_INV)
+cv2.imshow("Otsu Threshold", roi)
+cv2.waitKey(0)
+
+        # perfrom bitwise not to flip image to black text on white background
+roi = cv2.bitwise_not(thresh)
+        # perform another blur on character region
+
+    
+           
+text = py.image_to_string(roi, config='--oem 3')
 '''
-
-
 
 
 
