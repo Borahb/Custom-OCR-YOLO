@@ -49,7 +49,7 @@ This will show the step-by-step workflow on the following original image.
 The first step of the process is taking the bounding box coordinates from YOLOv3 and simply taking the region within the bounds of the box. As this image is super small, we use cv2.resize() to blow the image up 3x its original size.
 
 <p align="center"> 
-<img src = "asset/2.png" height = 100, width = 200>
+<img src = "Crop/crop__0.jpg" height = 100, width = 200>
 </p>
 
 Then we convert the image to grayscale and apply a small Gaussian blur to smooth it out.
