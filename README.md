@@ -28,6 +28,29 @@ Here I have used YOLO_V3 trained on personal dataset. Then the coordinates of th
 
 `python Custom_OCR.py --image <yourimage.jpg>`
 
+
+#### Step by Step Workflow
+
+This section will highlight the steps I took in order to implement the Custom-OCR with YOLOv3 and potential areas to be worked on further.
+
+This will show the step-by-step workflow on the following original image.
+
+<img src = "images/repo3.jpg" height = 350, width = 600>
+
+##### Detected regions
+
+<img src = "asset/predictions1.jpg" height = 350, width = 600>
+
+
+The first step of the process is taking the bounding box coordinates from YOLOv3 and simply taking the region within the bounds of the box. As this image is super small, we use cv2.resize() to blow the image up 3x its original size.
+
+<img src = "asset/2.png" height = 100, width = 200>
+
+
+
+
+
+
 ## Contributing
 Currently it is in R&D Phase.
 
