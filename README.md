@@ -36,29 +36,39 @@ This section will highlight the steps I took in order to implement the Custom-OC
 
 This will show the step-by-step workflow on the following original image.
 
+<p align="center"> 
 <img src = "images/repo3.jpg" height = 300, width = 600>
+</p>
 
 ##### Detected regions
 
+<p align="center"> 
 <img src = "asset/predictions1.jpg" height = 300, width = 600>
-
+</p>
 
 The first step of the process is taking the bounding box coordinates from YOLOv3 and simply taking the region within the bounds of the box. As this image is super small, we use cv2.resize() to blow the image up 3x its original size.
 
+<p align="center"> 
 <img src = "asset/2.png" height = 100, width = 200>
+</p>
 
 Then we convert the image to grayscale and apply a small Gaussian blur to smooth it out.
 
+<p align="center"> 
 <img src = "asset/3.png" height = 100, width = 200>
+</p>
 
 The image is then thresholded to white text with black background and has Otsu's method also applied. This white tect on black background helps to find contours of image.
 
+<p align="center"> 
 <img src = "asset/4.png" height = 100, width = 200>
+</p>
 
 Then we apply a bitwise_not mask to flip the image to black text on white background which Tesseract is more accurate with.
 
+<p align="center"> 
 <img src = "Crop/roi__0.jpg" height = 100, width = 200>
-
+</p>
 
 ## Contributing
 Currently it is in R&D Phase.
