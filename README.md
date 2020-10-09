@@ -58,7 +58,7 @@ Then we convert the image to grayscale and apply a small Gaussian blur to smooth
 <img src = "asset/3.png" height = 100, width = 200>
 </p>
 
-The image is then thresholded to white text with black background and has Otsu's method also applied. This white tect on black background helps to find contours of image.
+The image is then thresholded to white text with black background and has Otsu's method also applied. This white text on black background helps to find contours of image.
 
 <p align="center"> 
 <img src = "asset/4.png" height = 100, width = 200>
