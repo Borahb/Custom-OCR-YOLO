@@ -7,7 +7,7 @@ This is a Custom OCR built by combining YOLO and Tesseract, to read the specific
 Here I have used YOLO_V3 trained on personal dataset. Then the coordinates of the detected objects are passed for cropping the deteted objects and storing them in another list. This list is passed through the Tesseract to get the desired output.
 
 ## Model
-- Download the weights file from this link : https://drive.google.com/file/d/1o6_3dcsMd9sUFblvyWyraeuMEifzE1YA/view?usp=sharing
+- You can train a custom YOLO_V3 model using your own custom dataset.
 - Make a folder named model and put the weights file inside it.
 
 ## Data
